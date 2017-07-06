@@ -31,6 +31,7 @@ def h_gradient(theta, X, y, lam=0.1):
 
     # TODO compute gradient
     return -1./n * np.sum(np.dot(np.c_[np.ones(n), X].T, y_mat - preds)
+    # return -1./n * np.dot(np.c_[np.ones(n), X].T, y_mat - preds) + lam * theta
 
 
 def softmax_cost_func(theta, X, y, lam=0.1):
@@ -39,6 +40,7 @@ def softmax_cost_func(theta, X, y, lam=0.1):
 
     # TODO compute loss (cost)
     return -1./n * np.sum(y_mat * np.log(h_func(theta,X)))
+    # return -1./n * np.sum(y_mat * np.log(h_func(theta, X))) + lam/2. * np.sum(theta * theta)
 
 
 # gradient descent
