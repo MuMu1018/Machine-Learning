@@ -10,7 +10,7 @@ def sigmoid(x):
     """
 
     #TODO sigmoid function
-
+    return 1. / (1 + np.exp(-x))
 
 
 def dsigmoid(x):
@@ -20,6 +20,7 @@ def dsigmoid(x):
     :return: derivative value (array like)
     """
     #TODO dsigmoid function
+    return sigmoid(x) * (1 - sigmoid(x))
 
 
 def tanh(x):
@@ -29,6 +30,7 @@ def tanh(x):
     :return: tanh value (array like)
     """
     #TODO tanh function
+    return 2. / ( 1 + np.exp(-2 * x)) - 1
 
 
 def dtanh(x):
@@ -38,6 +40,7 @@ def dtanh(x):
     :return: derivative value (array like)
     """
     #TODO dtanh function
+    return 1 - tanh(x) * tanh(x)
 
 
 def softmax(X):
@@ -47,6 +50,7 @@ def softmax(X):
     :return:
     """
     #TODO softmax function
+    return np.exp(X).T / np.sum(np.exp(X),axis=1).T
 
 
 class MLP:
@@ -161,6 +165,7 @@ class MLP:
             # iterate every batch
             for batch in xrange(0, n_samples, self.batch_size):
                 #TODO call forward function
+
                 #TODO call backward function
 
             if i % self.verbose == 0:
