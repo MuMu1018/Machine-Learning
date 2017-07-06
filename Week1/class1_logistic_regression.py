@@ -48,6 +48,7 @@ def pred_val(theta, X, hard=True):
 
 def logistic_grad_func(theta, x, y):
     # TODO compute gradient
+    grad = np.dot((logistic_val_func(theta, x)-y).T,np.c_[np.ones(x.shape[0]), x]) / x.shape[0]
 
     return grad
 
@@ -55,6 +56,7 @@ def logistic_grad_func(theta, x, y):
 def sigmoid(x):
 
     # TODO sigmoid function
+    sig = 1.0 / ( 1 + np.exp(-x))
 
     return sig
 
@@ -69,6 +71,7 @@ def logistic_cost_func(theta, x, y):
     y_hat = logistic_val_func(theta, x)
 
     # TODO compute loss
+    cost = np.sum(np.dot(y.T,np.log(y_hat)) + np.dot((1-y).T,np.log(1-y_hat)))
 
     cost *= 1.0 / x.shape[0]
     return -cost
