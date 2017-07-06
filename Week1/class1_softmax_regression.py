@@ -15,12 +15,13 @@ def onehot(y):
 
 #TODO softmax function
 def softmax(X):
-    return None
+    return np.exp(X).T / np.sum(np.exp(X),axis=1).T
 
 
 # TODO hypothesis function
 def h_func(theta, X):
-    return None
+    z = np.dot(np.c_[np.ones[X.shape[0],X],theta)
+    return softmax(z)
 
 
 def h_gradient(theta, X, y, lam=0.1):
@@ -29,8 +30,7 @@ def h_gradient(theta, X, y, lam=0.1):
     preds = h_func(theta, X)
 
     # TODO compute gradient
-    return None
-
+    return -1./n * np.sum(np.dot(np.c_[np.ones(n), X].T, y_mat - preds)
 
 
 def softmax_cost_func(theta, X, y, lam=0.1):
@@ -38,7 +38,7 @@ def softmax_cost_func(theta, X, y, lam=0.1):
     y_mat = onehot(y)
 
     # TODO compute loss (cost)
-    return None
+    return -1./n * np.sum(y_mat * np.log(h_func(theta,X)))
 
 
 # gradient descent
