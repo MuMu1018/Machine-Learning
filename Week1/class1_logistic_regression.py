@@ -56,7 +56,7 @@ def logistic_grad_func(theta, x, y):
 def sigmoid(x):
 
     # TODO sigmoid function
-    sig = 1.0 / ( 1 + np.exp(-x))
+    sig = 1. / ( 1. + np.exp(-x) )
 
     return sig
 
@@ -72,6 +72,7 @@ def logistic_cost_func(theta, x, y):
 
     # TODO compute loss
     cost = np.sum(np.dot(y.T,np.log(y_hat)) + np.dot((1-y).T,np.log(1-y_hat)))
+    #cost = np.sum(y * np.log(y_hat)) + np.sum((1 - y) * np.log(1-y_hat))
 
     cost *= 1.0 / x.shape[0]
     return -cost
