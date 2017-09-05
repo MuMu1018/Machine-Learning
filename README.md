@@ -1,9 +1,9 @@
-# MlCourse_Coursera
-I'm learning Machine Learning (ML) course on Coursera this Summer, as well as Python.
+# Machine Learning Courses
+I'm learning Machine Learning (ML) course on bitTiger and Coursera this Summer.
 
-I will use PyCharm, TensorFlow, Caffe for studying.
+Tools using: Matlab, PyCharm, TensorFlow, Caffe (Language: Python, Matlab)
 
-I'm a beginner, and I hope to be a ML engineer, and build an interest robot.
+I hope to become a ML engineer, and build robots help people.
 
 ## what I have learnt
 
