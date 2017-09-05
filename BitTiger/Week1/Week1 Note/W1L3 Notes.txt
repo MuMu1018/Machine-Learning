@@ -1,0 +1,21 @@
+# This course is given by software engineer from Boeing, 
+# who was just graduated from CMU-CS department.
+
+# This course is about AI Engineer interview training.
+
+# Interview tips:
+    # There is no "right" answer to any interview question
+    
+
+Module 1: Probability
+
+    Question 1: Gender ratio
+
+    Question 2: Judge coin biased or not (560headup/1000flip)
+
+Module 2: Machine Learning Algorithm
+
+    Question 1: Four types of ML algorithms - Supervised/Unsupervised/Semi-supervised/Reinforcement
+    
+    Question 2: Missing values treating
+
