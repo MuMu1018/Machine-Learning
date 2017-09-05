@@ -1,5 +1,5 @@
-# ML-DL-course
-I'm learning Machine Learning (ML) / Deep Learning (DL) this Summer, as well as Python.
+# MlCourse_Coursera
+I'm learning Machine Learning (ML) course on Coursera this Summer, as well as Python.
 
 I will use PyCharm, TensorFlow, Caffe for studying.
 
