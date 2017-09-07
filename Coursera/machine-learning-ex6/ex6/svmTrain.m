@@ -1,5 +1,5 @@
 function [model] = svmTrain(X, Y, C, kernelFunction, ...
-                            tol, max_passes)
+                                Flag, tol, max_passes)
 %SVMTRAIN Trains an SVM classifier using a simplified version of the SMO 
 %algorithm. 
 %   [model] = SVMTRAIN(X, Y, C, kernelFunction, tol, max_passes) trains an
@@ -26,6 +26,10 @@ end
 
 if ~exist('max_passes', 'var') || isempty(max_passes)
     max_passes = 5;
+end
+
+if ~exist('Flag', 'var') || isempty(Flag)
+    Flag = 1;
 end
 
 % Data parameters
@@ -73,8 +77,10 @@ else
 end
 
 % Train
-fprintf('\nTraining ...');
-dots = 12;
+if (Flag==1)
+    fprintf('\nTraining ...');
+    dots = 12;
+end
 while passes < max_passes,
             
     num_changed_alphas = 0;
@@ -167,19 +173,21 @@ while passes < max_passes,
     else
         passes = 0;
     end
-
-    fprintf('.');
-    dots = dots + 1;
-    if dots > 78
-        dots = 0;
-        fprintf('\n');
+    if (Flag==1)
+        fprintf('.');
+        dots = dots + 1;
+        if dots > 78
+            dots = 0;
+            fprintf('\n');
+        end
     end
     if exist('OCTAVE_VERSION')
         fflush(stdout);
     end
 end
-fprintf(' Done! \n\n');
-
+if (Flag==1)
+    fprintf(' Done! \n\n');
+end
 % Save the model
 idx = alphas > 0;
 model.X= X(idx,:);
