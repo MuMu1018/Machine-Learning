@@ -20,12 +20,19 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
+m = size(X,1);
 
-
-
-
-
-
+for i = 1:m
+    E = sum((X(i,:) - centroids(1,:)).^2);
+    idx(i,1) = 1;
+    for j = 2:K
+        error = sum((X(i,:) - centroids(j,:)).^2);
+        if error <= E
+            idx(i,1) = j;
+            E = error;
+        end
+    end
+end
 
 % =============================================================
 
